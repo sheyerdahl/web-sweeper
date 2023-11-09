@@ -1,0 +1,13 @@
+:root {
+    --board-width: 0
+}
+
+.tile-board {
+    display: grid;
+    grid-template-columns: repeat(var(--board-width), 2rem);
+    justify-content: center;
+}
+
+/* .tile {
+
+} */
