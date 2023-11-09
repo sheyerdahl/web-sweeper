@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { RootState } from "../../store"
 import { updateTile, setGamePlayState, toggleTileFlag } from "../../slices/gameBoardSlice"
-import { clickSoundPromise } from "../../AudioManager";
+import { clickSoundPromise, popSoundPromise } from "../../AudioManager";
 import { getMineNeighbors, blankRevealNeighbors, CheckWinCondition } from "../../utilities/GameUtilities";
 
 interface TileProps {
@@ -39,10 +39,10 @@ const Tile = memo(function Tile({ tileId }: TileProps): JSX.Element {
 
     const handlePlaceFlag = () => {
         if (gamePlayState === "Active" && !tile.revealed) {
-            clickSoundPromise.then((clickSound: Howl): void => {
-                clickSound.play();
+            popSoundPromise.then((popSound: Howl): void => {
+                popSound.play();
             })
-            // TO-DO
+            
             dispatch(toggleTileFlag(tileId))
         }
     }
