@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/web-sweeper/static/css/main.beb0606a.css",
+    "main.js": "/web-sweeper/static/js/main.fd4968ac.js",
+    "static/js/787.5df7b907.chunk.js": "/web-sweeper/static/js/787.5df7b907.chunk.js",
+    "static/media/Vibes.mp3": "/web-sweeper/static/media/Vibes.7b0f3919e27282feb72d.mp3",
+    "static/media/Segoe UI Bold Italic.woff": "/web-sweeper/static/media/Segoe UI Bold Italic.04ca0df8c9e54c81b1a5.woff",
+    "static/media/Segoe UI Italic.woff": "/web-sweeper/static/media/Segoe UI Italic.eb9dca895cf2de5deeda.woff",
+    "static/media/Segoe UI Bold.woff": "/web-sweeper/static/media/Segoe UI Bold.21ecd6932d8c6e2ae14e.woff",
+    "static/media/Segoe UI.woff": "/web-sweeper/static/media/Segoe UI.293e692f583af77a347b.woff",
+    "static/media/click-sound.ogg": "/web-sweeper/static/media/click-sound.ae143cfc36e975c94bc5.ogg",
+    "index.html": "/web-sweeper/index.html",
+    "main.beb0606a.css.map": "/web-sweeper/static/css/main.beb0606a.css.map",
+    "main.fd4968ac.js.map": "/web-sweeper/static/js/main.fd4968ac.js.map",
+    "787.5df7b907.chunk.js.map": "/web-sweeper/static/js/787.5df7b907.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.beb0606a.css",
+    "static/js/main.fd4968ac.js"
+  ]
+}
