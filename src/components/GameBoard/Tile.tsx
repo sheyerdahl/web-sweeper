@@ -10,6 +10,17 @@ interface TileProps {
     tileId: number
 }
 
+const numberColors = [
+    "light-green",
+    "light-blue",
+    "dark-red",
+    "yellow",
+    "purple",
+    "dark-pink",
+    "black",
+    "black"
+]
+
 const Tile = memo(function Tile({ tileId }: TileProps): JSX.Element {
     const dispatch = useDispatch()
     const gamePlayState = useSelector((state: RootState) => state.gameBoard.gamePlayState)
@@ -46,6 +57,13 @@ const Tile = memo(function Tile({ tileId }: TileProps): JSX.Element {
             dispatch(toggleTileFlag(tileId))
         }
     }
+
+    const getNumberColor = (): string | undefined => {
+        const nearbyMinesAmount = Object.keys(nearbyMines).length
+        if (nearbyMinesAmount > 0) {
+            return numberColors[nearbyMinesAmount - 1]
+        }
+    }
     
     return (
         <div 
@@ -69,6 +87,7 @@ const Tile = memo(function Tile({ tileId }: TileProps): JSX.Element {
             <p className={
                 `mb0 mt0 f3
                 ${tile.revealed || gamePlayState === "Win" || tile.hasFlag ? "o-100" : "o-0"}
+                ${!tile.hasMine ? getNumberColor() : ""}
                 `
                 }>
                 
