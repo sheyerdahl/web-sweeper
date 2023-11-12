@@ -85,7 +85,7 @@ const Tile = memo(function Tile({ tileId }: TileProps): JSX.Element {
         }}
         >
             <p className={
-                `mb0 mt0 f3
+                `mb0 mt0 f3 tile-text
                 ${tile.revealed || gamePlayState === "Win" || tile.hasFlag ? "o-100" : "o-0"}
                 ${!tile.hasMine ? getNumberColor() : ""}
                 `
