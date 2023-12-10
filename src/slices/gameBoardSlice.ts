@@ -15,13 +15,15 @@ export interface GameBoardState {
   gamePlayState: GamePlayState
   boardWidth: number
   boardHeight: number
+  flagToggle: boolean
 }
 
 export const gameBoardInitialState: GameBoardState = {
   tiles: [],
   gamePlayState: "Inactive",
   boardWidth: 0,
-  boardHeight: 0
+  boardHeight: 0,
+  flagToggle: false
 }
 
 interface UpdateTilePayload {
@@ -59,10 +61,14 @@ export const gameBoardSlice = createSlice({
     toggleTileFlag: (state, action: PayloadAction<number>) => {
       state.tiles[action.payload].hasFlag = !state.tiles[action.payload].hasFlag
     },
+
+    toggleFlagToggle: (state) => {
+      state.flagToggle = !state.flagToggle
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setGameBoardState, setTiles, setGameBoardDimensions, updateTile, setGamePlayState, toggleTileFlag } = gameBoardSlice.actions
+export const { setGameBoardState, setTiles, setGameBoardDimensions, updateTile, setGamePlayState, toggleTileFlag, toggleFlagToggle } = gameBoardSlice.actions
 
 export default gameBoardSlice.reducer

@@ -25,10 +25,21 @@ const Tile = memo(function Tile({ tileId }: TileProps): JSX.Element {
     const dispatch = useDispatch()
     const gamePlayState = useSelector((state: RootState) => state.gameBoard.gamePlayState)
     const tile = useSelector((state: RootState) => state.gameBoard.tiles[tileId])
+    const flagToggle = useSelector((state: RootState) => state.gameBoard.flagToggle)
 
     const nearbyMines = getMineNeighbors(tile)
 
     const handleClick = () => {
+        if (gamePlayState !== "Active" || tile.revealed) {return}
+
+        if (flagToggle) {
+            handlePlaceFlag()
+        } else {
+            handleTileReveal()
+        }
+    }
+
+    const handleTileReveal = () => {
         if (gamePlayState === "Active" && !tile.revealed && !tile.hasFlag) {
             clickSoundPromise.then((clickSound: Howl): void => {
                 clickSound.play();

@@ -12,6 +12,11 @@
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+.flag-button {
+    left: 50%;
+    /* transform: translateX(-50%); */
+}
+
 /* .tile {
 
 } */

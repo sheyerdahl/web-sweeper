@@ -6,6 +6,7 @@ import { clickSoundPromise } from "../../AudioManager";
 import "./GameBoard.css"
 
 import Tile from "./Tile"
+import FlagButton from "./FlagButton"
 import { generateTiles, revealStartingTile, blankRevealNeighbors } from "../../utilities/GameUtilities"
 import { ITile, setTiles, setGameBoardDimensions, setGamePlayState } from "../../slices/gameBoardSlice"
 
@@ -24,6 +25,7 @@ function GameBoard(): JSX.Element {
 
     return (
         <div>
+            <FlagButton />
             <h1>Web-sweeper</h1>
             <p className={
             `
