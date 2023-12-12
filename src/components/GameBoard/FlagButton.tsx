@@ -14,16 +14,15 @@ function FlagButton(): JSX.Element {
     }
 
     return (
-        <div 
-        className={`fixed br4 pointer top-1 flag-button ba bw2 white b--black
+        <button
+        className={`fixed br4 pointer top-1 flag-button ba bw2 white b--black h3
         ${flagToggle ? "bg-green" : "bg-light-red"}
         ${isMobileDevice ? "" : "dn"}
-        `} 
-        onClick={() => handleClick()}>
-            <p>
-                Flag Toggle
-            </p>
-        </div>
+        `}
+        onClick={() => handleClick()}
+        >
+            Flag Toggle
+        </button>
     )
 }
 
