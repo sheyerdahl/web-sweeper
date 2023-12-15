@@ -174,7 +174,7 @@ export function blankRevealNeighbors(mainTile: ITile): void {
             if (!tile.revealed && !tile.hasMine) {
                 const numberTileId = Number(tileId)
                 
-                store.dispatch(updateTile({tileId: numberTileId, dataToUpdate: {revealed: true}}))
+                store.dispatch(updateTile({tileId: numberTileId, dataToUpdate: {revealed: true, hasFlag: false}}))
                 setTimeout(() => blankRevealNeighbors(tile), 30)
             }
         }
